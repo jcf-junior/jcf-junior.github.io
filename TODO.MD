@@ -1,9 +1,9 @@
-[ ] Scaffold the project
-    [ ] Create Home subcomponents
-        [ ] About Component
-        [ ] TechStack
-        [ ] Education
-        [ ] Experience
+[X] Scaffold the project
+    [X] Create Home subcomponents
+        [X] About Component
+        [X] TechStack
+        [X] Education
+        [X] Experience
 
 [ ] Profile Card component
     [X] Create components for social icons
@@ -12,11 +12,11 @@
     [ ] Match button gradient to app color scheme
 
 [ ] About Component
-    [ ] Write description
+    [X] Write description
 
-[ ] TechStack
-    [ ] Create responsive grid. Each technology is a square in the grid 
-    [ ] Create Technology component (pass name, description and icon as props)
+[X] TechStack
+    [X] Create responsive grid. Each technology is a square in the grid 
+    [X] Create Technology component (pass name, description and icon as props)
 
 [ ] Certifications
     [ ] Create Certification component. Pass institution, date and title as props
