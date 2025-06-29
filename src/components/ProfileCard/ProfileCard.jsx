@@ -1,9 +1,9 @@
 
 import React from "react"
 import SocialIcon from "./SocialIcon.jsx"
-import linkedinIcon from "../../assets/icons/linkedin.svg"
-import githubIcon from "../../assets/icons/github.svg"
-import emailIcon from "../../assets/icons/email.svg"
+import linkedinIcon from "../../assets/icons/Social/linkedin.svg"
+import githubIcon from "../../assets/icons/Social/github.svg"
+import emailIcon from "../../assets/icons/Social/email.svg"
  
 export default function ProfileCard() {
 
