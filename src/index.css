@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #090909;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -54,13 +54,27 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.app-container {
+  display: flex;
+  gap: 80px;
+  width: 100%;
+}
+
+/* Homescreen start */
+  .home-container {
+
+  }
+
+/* Homescreen end */
+
+/* Profile Start*/
 .profile-card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
 
-  background-color: #272829;
+  background-color: #FFFFFF;
   border-radius: 16px;
 
   width: 344px;
@@ -74,20 +88,21 @@ button:focus-visible {
   border-radius: 16px;
 }
 
-.profile-card-container h1 {
+.profile-card-container .name {
   font-size: 2.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.profile-card-container h1, .profile-card-container p {
-
+.profile-card-container .name, .profile-card-container p {
   margin: 0;
-  
 }
 
 .profile-card-container .profile-card-text {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  color: #151312;
 }
 
 .profile-card-socials {
@@ -97,7 +112,6 @@ button:focus-visible {
 
 .profile-card-socials img {
   width: 32px;
-  
 }
 
 .btn-grad {
@@ -121,4 +135,4 @@ background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  1
   text-decoration: none;
   border: none;
 }
-         
+/* Profile End*/
