@@ -60,7 +60,7 @@ button:focus-visible {
   width: 100%;
 }
 
-/* AboutMestart */
+/* AboutMe start */
 
   .about-container {
     text-align: left;
@@ -73,9 +73,7 @@ button:focus-visible {
 .techstack-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 50px;
   justify-content: center;
-  
 }
 
 .technology-img {
@@ -85,19 +83,38 @@ button:focus-visible {
 .technology-square {
   display: flex;
   flex-direction: column;
-
-  padding: 20px;
-  width: 100px;
-  aspect-ratio: 1/1;
-
+  gap: 5px;
+  padding: 10%;
+  width: 60px;
+  aspect-ratio: 1 / 1;
   border-radius: 16px;
   justify-content: center;
   align-items: center;
-
-  background-color: #3a3c3d;
+  background-color: #f1f5f9; 
+  transition: background-color 1s ease, color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
+.technology-square p {
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin: 0;
+  color: #151312;
+  transition: color 0.2s ease;
+}
+
+.technology-square:hover {
+  background-color: #ffffffd3; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.technology-square img {
+  max-width: 100%;
+  height: auto;
+  transition: none;
+}
 /* TechStack end */
+
 
 /* Profile Start*/
 .profile-card-container {
