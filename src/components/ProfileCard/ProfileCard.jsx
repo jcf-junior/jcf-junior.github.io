@@ -12,7 +12,7 @@ export default function ProfileCard() {
             <div className="profile-card-container">
                 <img src="./src/assets/profileDemo.jpg" alt=""/>
                 <div className="profile-card-text">
-                    <h1>José Júnior</h1>
+                    <p className="name">José Júnior</p>
                     <p>Full Stack Developer</p>
                     <p>Viana do Castelo, Portugal</p>
                 </div>
