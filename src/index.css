@@ -6,6 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #090909;
+  background-color: #040716;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -74,13 +75,96 @@ button:focus-visible {
 
 /* TechStack start*/
 
-.techstack-container {
+/* .techstack-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-content: center;
+} */
+
+
+.techstack-container {
+  position: relative;
+  padding: 10px;
+  height: var(--squareWidth);
+  overflow: hidden;
+  background-color: white;
+  mask-image: linear-gradient(to right,
+    rgba(0,0,0,0), 
+    rgba(0,0,0,1) 20%,
+    rgba(0,0,0,1) 80%,
+    rgba(0,0,0,0)
+    );
+  --squareWidth: 80px;
+  --squareAmount: 8;
+}
+
+.techstack-container:hover {
+  animation-play-state: paused;
+}
+
+
+.technology-square {
+  position: absolute;
+  left: max(calc(var(--squareAmount)*var(--squareWidth)), 100%);
+  width: var(--squareWidth);
+  aspect-ratio: 1/1;
+  animation-name: scrollLeft;
+  animation-duration: var(--scrollDuration);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  --scrollDuration: 30s;
 }
 
 .technology-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* width: 80px;
+  height: 80px; */
+}
+
+@keyframes scrollLeft {
+  100% {
+    left: calc(var(--squareWidth)*-1);
+  }
+}
+
+.square-1 {
+  animation-delay: calc(var(--scrollDuration) / var(--squareAmount) * (var(--squareAmount) - 1) * -1);
+}
+
+.square-2 {
+  animation-delay: calc(var(--scrollDuration) / var(--squareAmount) * (var(--squareAmount) - 2) * -1);
+}
+
+.square-3 {
+  animation-delay: calc(var(--scrollDuration) / var(--squareAmount) * (var(--squareAmount) - 3) * -1);
+}
+
+.square-4 {
+  animation-delay: calc(var(--scrollDuration) / var(--squareAmount) * (var(--squareAmount) - 4) * -1);
+}
+
+.square-5 {
+  animation-delay: calc(var(--scrollDuration) / var(--squareAmount) * (var(--squareAmount) - 5) * -1);
+}
+
+.square-6 {
+  animation-delay: calc(var(--scrollDuration) / var(--squareAmount) * (var(--squareAmount) - 6) * -1);
+}
+
+.square-7 {
+  animation-delay: calc(var(--scrollDuration) / var(--squareAmount) * (var(--squareAmount) - 7) * -1);
+}
+
+.square-8 {
+  animation-delay: calc(var(--scrollDuration) / var(--squareAmount) * (var(--squareAmount) - 8) * -1);
+}
+
+
+
+
+/* .technology-img {
   width: 50%;
 }
 
@@ -116,7 +200,7 @@ button:focus-visible {
   max-width: 100%;
   height: auto;
   transition: none;
-}
+} */
 /* TechStack end */
 
 
