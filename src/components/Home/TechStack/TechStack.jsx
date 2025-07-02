@@ -23,8 +23,8 @@ export default function TechStack() {
                 <Technology name="HTML" id={4} icon={techIcons.html}/>
                 <Technology name="CSS" id={5} icon={techIcons.css}/>
                 <Technology name="Tailwind" id={6} icon={techIcons.tailwind}/>
-                <Technology name="Express.JS" id={7} icon={techIcons.express}/>
-                <Technology name="Next.JS" id={8} icon={techIcons.next}/>
+                <Technology name="Express.JS" id={7} invert={true} icon={techIcons.express}/>
+                <Technology name="Next.JS" id={8} invert={true} icon={techIcons.next}/>
             </div>
         </>
     )
