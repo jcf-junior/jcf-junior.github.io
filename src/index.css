@@ -165,7 +165,6 @@ button:hover::after {
 .app-container {
   display: flex;
   gap: 80px;
-  width: 100%;
 }
 
 /* AboutMe start */
@@ -366,7 +365,7 @@ h2::after {
 
 .project-container {
   position: relative;
-  width: 250px;
+  width: 1fr;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -381,7 +380,6 @@ h2::after {
 
 .project-img {
   width: 100%;
-  
 }
 
 .project-container, .project-img, .project-text {
@@ -389,7 +387,7 @@ h2::after {
 }
 
 .project-text {
-   position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -408,7 +406,6 @@ h2::after {
 
   background: rgba(83, 91, 242, 0.9);
 
-  /* Preparar estado inicial fora do ecrã */
   transform: translateY(200px);
   opacity: 0;
   transition: all 0.5s ease;
@@ -462,7 +459,7 @@ h2::after {
   border-radius: 8px;
 
   padding: 10px 20px;
-  width: 400px;
+  width: 1fr;
 
   font-weight: bold;
   position: relative;
