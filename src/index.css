@@ -18,6 +18,7 @@
   --darkBlueBackground: #040716;
   --blackBackground: #090909;
   --highlightColor: #1341d0;
+  --buttonDark: #1a1a1a;
 }
 
 a {
@@ -134,16 +135,27 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--buttonDark);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.3s;
+  position: relative;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--highlightColor);
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+button:hover::after {
+  content: '';
+  background-color: var(--highlightColor);
+  border-radius: 8px;
+  width: 104%;
+  height: 110%;
+  position: absolute;
+  top: -4%;
+  left: -2%;
+  z-index: -1;
+
+  filter: blur(7px);
 }
 
 .app-container {
@@ -355,6 +367,14 @@ background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  1
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  animation-name: appear;
+  /* animation-duration: 3s; */
+  animation-timeline: view();
+  animation-timing-function: ease-out;
+  animation-range: 0% cover 40%;
+  
+
 }
 
 .project-img {
@@ -403,17 +423,21 @@ background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  1
 
 .project-container:hover .project-text {
   display: flex;
-  transform: translateY(0); /* Sobe para o lugar certo */
+  transform: translateY(0);
   opacity: 1;
 }
 
-@keyframes scrollUp {
+.projects-btn {
+  margin-top: 16px;
+}
+
+@keyframes appear {
   from {
-    bottom: -200px;
-    background: rgba(19, 65, 208, 0.9);
+    scale: 0.5;
+    opacity: 0;
   } to {
-    bottom: 0;
-    background: rgba(19, 65, 208, 0.9);
+    scale: 1;
+    opacity: 1;
   }
 }
 

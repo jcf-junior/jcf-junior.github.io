@@ -1,8 +1,10 @@
 import Project from "./Project";
 import { projectImages } from "./ProjectImages";
+import { useState } from "react"
 
 export default function Projects() {
 
+    const [showAll, setShowAll] = useState(false)
 
     return (
         <>        
@@ -20,7 +22,22 @@ export default function Projects() {
                     title="React Component Library"
                     stack={['React', 'React Router', 'Firebase']}
                 />
+
+                {showAll && 
+                <>
+                    <Project img={projectImages.vanlife}
+                        title="Example project"
+                        stack={['Next.JS', 'React', 'PostgreSQL']}
+                    />
+                    <Project img={projectImages.vanlife}
+                        title="Example project"
+                        stack={['Next.JS', 'React', 'PostgreSQL']}
+                    />
+                </>
+                }
             </div>
+
+            <button className="projects-btn" onClick={()=>setShowAll(prev => !prev)}>Show All Projects</button>
         </>
     )
 }
