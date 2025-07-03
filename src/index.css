@@ -39,6 +39,40 @@ body {
   position: relative;
 }
 
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--buttonDark);
+  cursor: pointer;
+  transition: border-color 0.3s;
+  position: relative;
+}
+button::after {
+  content: '';
+  border-radius: 8px;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  position: absolute;
+  top: -2.5px;
+  left: -2.5px;
+  z-index: -1;
+  filter: blur(7px);
+
+  transition: background 0.3s linear;
+}
+
+
+button:hover::after {
+  
+  background-color: var(--highlightColor);
+ 
+  filter: blur(7px);
+}
+
 .lines {
   position: absolute;
   top: 0;
@@ -126,36 +160,6 @@ body {
 .about-h1 {
   /* color: var(--darkBlueBackground); */
   color: #3e3b3f;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--buttonDark);
-  cursor: pointer;
-  transition: border-color 0.3s;
-  position: relative;
-}
-button:hover {
-  border-color: var(--highlightColor);
-}
-
-button:hover::after {
-  content: '';
-  background-color: var(--highlightColor);
-  border-radius: 8px;
-  width: 104%;
-  height: 110%;
-  position: absolute;
-  top: -4%;
-  left: -2%;
-  z-index: -1;
-
-  filter: blur(7px);
 }
 
 .app-container {
@@ -335,7 +339,7 @@ background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  1
 
 /* Projects Start */
 
-.projects-h2 {
+h2 {
   text-transform: uppercase;
   text-align: left;
   font-size: 3rem;
@@ -343,7 +347,7 @@ background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  1
   position: relative;
 }
 
-.projects-h2::after {
+h2::after {
   content: '';
   width: 15px;
   height: 15px;
@@ -373,8 +377,6 @@ background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  1
   animation-timeline: view();
   animation-timing-function: ease-out;
   animation-range: 0% cover 40%;
-  
-
 }
 
 .project-img {
@@ -442,3 +444,56 @@ background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  1
 }
 
 /* Projects End */
+
+
+/* Certifications Start */
+
+.certifications-container {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.certification {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #252525;
+  border-radius: 8px;
+
+  padding: 10px 20px;
+  width: 400px;
+
+  font-weight: bold;
+  position: relative;
+  
+  cursor: pointer;
+}
+
+.certification::after {
+  --certiicationOffset: 10px;
+  content: '';
+  position: absolute;
+
+  top: calc(var(--certiicationOffset)/-2);
+  left: calc(var(--certiicationOffset)/-2);
+  width: calc(100% + var(--certiicationOffset));
+  height: calc(100% + var(--certiicationOffset));
+
+  border-radius: 8px;
+  
+  transition: background 0.3s linear;
+  z-index: -1;
+  filter: blur(5px)
+}
+
+.certification:hover::after {
+  background: var(--highlightColor);
+  filter: blur(5px);
+}
+
+.certification-date {
+  color: var(--highlightColor);
+}
+
+/* Certifications End */
