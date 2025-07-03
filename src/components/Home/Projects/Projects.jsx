@@ -37,7 +37,8 @@ export default function Projects() {
                 }
             </div>
 
-            <button className="projects-btn" onClick={()=>setShowAll(prev => !prev)}>Show All Projects</button>
+            <button className="projects-btn" onClick={()=>setShowAll(prev => !prev)}>
+                {`Show ${showAll ? 'Less' : 'More'} Projects`}</button>
         </>
     )
 }
