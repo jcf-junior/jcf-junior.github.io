@@ -11,12 +11,19 @@
     [ ] Change font
     [ ] Match button gradient to app color scheme
 
-[ ] About Component
+[X] About Component
     [X] Write description
 
 [X] TechStack
     [X] Create responsive grid. Each technology is a square in the grid 
     [X] Create Technology component (pass name, description and icon as props)
+
+[ ] Projects component
+    [X] Create RecentProject component
+    [ ] Projects must be fetched from Github
+    [ ] Clicking the project should redirect users 
+        to the the project page, or github if there isn't one
+        
 
 [ ] Certifications
     [ ] Create Certification component. Pass institution, date and title as props
@@ -27,11 +34,6 @@
 
 [ ] Experience
 
-[ ] Projects component
-    [ ] Create RecentProject component
-    [ ] Projects must be fetched from Github
-    [ ] Clicking the project should redirect users 
-        to the the project page, or github if there isn't one
-    
+
 
 

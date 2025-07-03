@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, sans-serif;
   line-height: 1.5;
@@ -13,6 +17,7 @@
   -moz-osx-font-smoothing: grayscale;
   --darkBlueBackground: #040716;
   --blackBackground: #090909;
+  --highlightColor: #1341d0;
 }
 
 a {
@@ -160,7 +165,7 @@ button:focus-visible {
 .techstack-container {
   position: relative;
   padding: 10px;
-  height: var(--squareWidth);
+  height: calc(var(--squareWidth) + 20px);
   overflow: hidden;
   /* background-color: white; */
   mask-image: linear-gradient(to right,
@@ -260,31 +265,6 @@ button:focus-visible {
   padding: 30px;
 }
 
-/* .profile-card-container::before {
-  position: absolute;
-  content: '';
-  background: linear-gradient(to bottom right, blue, red);
-  animation: rotate 8s linear infinite forwards;
-  animation-play-state: paused;
-  z-index: -1;
-  width: 104%;
-  height: 102.5%;
-  left: -2%;
-  top: -1.25%;
-  border-radius: 16px;  
-}
-
-.profile-card-container:hover::before {
-  animation-play-state: running;
-}
-
-@keyframes rotate {
-  0% {
-    filter: hue-rotate(0deg) blur(10px);
-  } 100% {
-    filter: hue-rotate(360deg) blur(10px);
-  }
-} */
 
 .profile-card-container > img {
   width: 240px;
@@ -339,3 +319,102 @@ background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  1
   border: none;
 }
 /* Profile End*/
+
+
+/* Projects Start */
+
+.projects-h2 {
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 3rem;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.projects-h2::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: var(--highlightColor);
+  position: absolute;
+  bottom: 20px;
+  margin-left: 6px;
+  border-radius: 50%;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.project-container {
+  position: relative;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  
+}
+
+.project-container, .project-img, .project-text {
+  border-radius: 5%;
+}
+
+.project-text {
+   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  color: #ffffff;
+  font-weight: bold;
+  display: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+
+  background: rgba(83, 91, 242, 0.9);
+
+  /* Preparar estado inicial fora do ecrã */
+  transform: translateY(200px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.project-container p {
+  margin: 0;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.project-container:hover .project-text {
+  display: flex;
+  transform: translateY(0); /* Sobe para o lugar certo */
+  opacity: 1;
+}
+
+@keyframes scrollUp {
+  from {
+    bottom: -200px;
+    background: rgba(19, 65, 208, 0.9);
+  } to {
+    bottom: 0;
+    background: rgba(19, 65, 208, 0.9);
+  }
+}
+
+/* Projects End */
