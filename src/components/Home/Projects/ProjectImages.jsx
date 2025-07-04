@@ -1,4 +1,4 @@
-import vanlife from '../../../assets/projectBackgrounds/vanLife.png'
+import vanlife from '../../../assets/projectBackgrounds/vanlife.png'
 
 export const projectImages = {
     vanlife: vanlife
