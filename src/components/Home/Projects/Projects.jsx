@@ -1,40 +1,42 @@
 import Project from "./Project";
-import { projectImages } from "./ProjectImages";
-import { useState } from "react"
+import { useState } from "react";
+import { projectsData } from '../../../data/projectsData.js';
+
 
 export default function Projects() {
 
     const [showAll, setShowAll] = useState(false)
 
+
     return (
-        <>        
+        <>   
             <h2 className="projects-h2">Latest Projects</h2>
             <div className="project-grid">
-                <Project img={projectImages.vanlife}
-                    title="Example project"
-                    stack={['Next.JS', 'React', 'PostgreSQL']}
-                />
-                <Project img={projectImages.vanlife}
-                    title="VanLife - Van Renting"
-                    stack={['React', 'React Router', 'Firebase']}
-                />
-                <Project img={projectImages.vanlife}
-                    title="React Component Library"
-                    stack={['React', 'React Router', 'Firebase']}
-                />
+                {
+                    projectsData.map((project, index) => {
 
-                {showAll && 
-                <>
-                    <Project img={projectImages.vanlife}
-                        title="Example project"
-                        stack={['Next.JS', 'React', 'PostgreSQL']}
-                    />
-                    <Project img={projectImages.vanlife}
-                        title="Example project"
-                        stack={['Next.JS', 'React', 'PostgreSQL']}
-                    />
-                </>
+                        if(showAll === false && index <= 2) {
+                            return (
+                                <Project
+                                    key={index}
+                                    img={project.img}
+                                    title={project.title}
+                                    stack={project.stack}
+                                />
+                            ) 
+                        } else if (showAll) {
+                            return (
+                                <Project 
+                                    key={index}
+                                    img={project.img}
+                                    title={project.title}
+                                    stack={project.stack}
+                                />
+                            )
+                        }
+                    })  
                 }
+                
             </div>
 
             <button className="projects-btn" onClick={()=>setShowAll(prev => !prev)}>
