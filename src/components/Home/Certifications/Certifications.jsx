@@ -1,13 +1,19 @@
 import Certification from "./Certification";
+import { certificationsData } from "../../../data/certificationsData";
 
 export default function Certifications() {
+
     return (
         <>
             <h2>Certifications</h2>
             <div className="certifications-container">
-                <Certification title='FullStack Developer Path' date="2025"/>
-                <Certification title='Frontend Developer Path' date="2025"/>
-                <Certification title='CCNA: Routing & Security' date="2025"/>
+                {
+                    certificationsData.map((cert, index) => {
+                        return(
+                            <Certification key={index} issuer={cert.issuer} title={cert.title} date={cert.date} link={cert.link}/>
+                        )
+                    })
+                }
             </div>
         </>
     )

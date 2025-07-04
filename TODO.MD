@@ -1,3 +1,7 @@
+[ ] Remake Projects Section
+    [ ] Use same logic as certifications
+    [ ] Separate DATA from Render logic
+
 [X] Scaffold the project
     [X] Create Home subcomponents
         [X] About Component
@@ -18,16 +22,16 @@
     [X] Create responsive grid. Each technology is a square in the grid 
     [X] Create Technology component (pass name, description and icon as props)
 
-[ ] Projects component
+[X] Projects component
     [X] Create RecentProject component
-    [ ] Projects must be fetched from Github
-    [ ] Clicking the project should redirect users 
-        to the the project page, or github if there isn't one
+    ~~[ ] Projects must be fetched from Github~~
+    ~~[ ] Clicking the project should redirect users 
+        to the the project page, or github if there isn't one~~
         
 
-[ ] Certifications
-    [ ] Create Certification component. Pass institution, date and title as props
-    [ ] Redirect clicks on Certification component to certificate pdfs @Credly
+[X] Certifications
+    [X] Create Certification component. Pass institution, date and title as props
+    [X] Redirect clicks on Certification component to certificate @Credly
 
 [ ] Education
     [ ] Decide whether to include education section
