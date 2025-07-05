@@ -500,3 +500,91 @@ h2::after {
 }
 
 /* Certifications End */
+
+/* Experience Start */
+.experience {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  row-gap: 40px;
+  column-gap: 15px;
+  position: relative;
+  gap: 15px;
+}
+
+.experience-card {
+  background-color: #252525;
+  width: 100%;
+  border-radius: 8px;
+  text-align: left;
+  padding: 10px 20px;
+}
+
+.experience-card-content * {
+  margin: 0;
+  display: block;
+}
+
+.experience-card-content {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 80% 10%;
+}
+
+.experience-card-content h3, .experience-card-content p {
+  grid-column: 1;
+}
+
+.experience-card-content .card-date {
+  grid-column: 2;
+  grid-row: 1;
+  color: var(--highlightColor);
+}
+
+
+.experience::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 4px;
+
+  grid-column: 2;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  
+  left: 0;
+}
+
+.experience-card:nth-child(odd) {
+  grid-column: 1;
+
+}
+
+.experience-card:nth-child(even) {
+  grid-column: 3;
+}
+
+.experience-card:nth-child(1) {
+  grid-row: 1;
+}
+
+.experience-card:nth-child(2) {
+  grid-row: 2;
+}
+
+.experience-card:nth-child(3) {
+  grid-row: 3;
+}
+
+.experience-card:nth-child(4) {
+  grid-row: 4;
+}
+
+.experience-card:nth-child(5) {
+  grid-row: 5;
+}
+
+.experience-card:nth-child(6) {
+  grid-row: 6;
+}
+
+/* Experience End */

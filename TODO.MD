@@ -1,6 +1,6 @@
-[ ] Remake Projects Section
-    [ ] Use same logic as certifications
-    [ ] Separate DATA from Render logic
+[X] Remake Projects Section
+    [X] Use same logic as certifications
+    [X] Separate DATA from Render logic
 
 [X] Scaffold the project
     [X] Create Home subcomponents

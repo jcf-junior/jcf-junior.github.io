@@ -1,8 +1,17 @@
+import ExperienceCard from "./ExperienceCard";
+
 export default function Experience() {
+
 
     return (
         <>
-            <p>Experience section goes here</p>
+            <h2>Experience</h2>
+            <div className="experience">
+                <ExperienceCard />
+                <ExperienceCard />
+                <ExperienceCard />
+                <ExperienceCard />
+            </div>
         </>
     )
 }
