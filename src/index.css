@@ -462,6 +462,12 @@ h2::after {
   position: relative;
   text-align: left;
   cursor: pointer;
+
+  animation-name: appear;
+  animation-timing-function: ease;
+  animation-duration: 3;
+  animation-timeline: view();
+  animation-range: 0% cover 30%;
 }
 
 .certification::after {
