@@ -60,8 +60,26 @@ button::after {
   transition: background 0.3s linear;
 }
 
+button:hover::after {  
+  background-color: var(--highlightColor);
+  filter: blur(7px);
+}
 
-button:hover::after {
+.hover-effect::after {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  top: -2.5px;
+  left: -2.5px;
+  z-index: -1;
+  filter: blur(7px);
+  transition: background 0.3s linear;
+}
+
+
+.hover-effect:hover::after {
   
   background-color: var(--highlightColor);
  
@@ -446,20 +464,25 @@ h2::after {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-.certification {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
+
+.certification-effect-wrapper{
+  position: relative;
 
   background-color: #252525;
   border-radius: 8px;
 
   padding: 10px 20px;
   width: 1fr;
+}
+
+
+.certification {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 
   font-size: 1rem;
-  /* font-weight: bold; */
-  position: relative;
   text-align: left;
   cursor: pointer;
 
@@ -468,28 +491,6 @@ h2::after {
   animation-duration: 3;
   animation-timeline: view();
   animation-range: 0% cover 30%;
-}
-
-.certification::after {
-  --certiicationOffset: 10px;
-  content: '';
-  position: absolute;
-
-  top: calc(var(--certiicationOffset)/-2);
-  left: calc(var(--certiicationOffset)/-2);
-  width: calc(100% + var(--certiicationOffset));
-  height: calc(100% + var(--certiicationOffset));
-
-  border-radius: 8px;
-  
-  transition: background 0.3s linear;
-  z-index: -1;
-  filter: blur(5px)
-}
-
-.certification:hover::after {
-  background: var(--highlightColor);
-  filter: blur(5px);
 }
 
 .certification-title span {
@@ -517,6 +518,7 @@ h2::after {
   border-radius: 8px;
   text-align: left;
   padding: 10px 20px;
+  position: relative;
 }
 
 .experience-card-content * {
@@ -527,21 +529,31 @@ h2::after {
 .experience-card-content {
   margin: 0;
   display: grid;
-  grid-template-columns: 80% 10%;
+  grid-template-columns: 1fr 1fr;
 }
 
-.experience-card-content h3, .experience-card-content p {
+.experience-card-content .company {
+  font-weight: bold;
+}
+
+.experience-card-content p {
   grid-column: 1;
+}
+
+.experience-card-content .role {
+  grid-column: 1 / 2;
 }
 
 .experience-card-content .card-date {
   grid-column: 2;
   grid-row: 1;
   color: var(--highlightColor);
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
-
-.experience::before {
+.experience::before { /* Vertical Line*/
   content: '';
   position: absolute;
   height: 100%;
@@ -556,7 +568,27 @@ h2::after {
 
 .experience-card:nth-child(odd) {
   grid-column: 1;
+}
 
+.experience-card:nth-child(odd)::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  aspect-ratio: 1 / 1;
+
+  background-color: white;
+  right: -26px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  z-index: -1;
+
+  border-radius: 50%;
+  animation-name: appear;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  animation-timeline: view();
+  animation-range: 0% cover 30%;
 }
 
 .experience-card:nth-child(even) {
