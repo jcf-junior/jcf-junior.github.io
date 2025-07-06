@@ -22,7 +22,7 @@ export default function ProfileCard() {
                     <SocialIcon icon={githubIcon} href="http://github.com/jcf-junior/" alt="an image of GitHub's logo"/>
                 </div>
                 
-                <a href='mailto:josecaldas34@gmail.com'><button className="btn-grad" type="button">Contact</button></a>
+                <a href='mailto:josecaldas34@gmail.com'><button className="profile-btn" type="button">Contact</button></a>
             </div>
         </>
     )

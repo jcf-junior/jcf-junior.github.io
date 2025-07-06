@@ -2,6 +2,22 @@
   box-sizing: border-box;
 }
 
+@keyframes appear {
+  from {
+    scale: 0.5;
+    opacity: 0;
+  } to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes scrollLeft {
+  100% {
+    left: calc(var(--squareWidth)*-1);
+  }
+}
+
 :root {
   font-family: Inter, sans-serif;
   line-height: 1.5;
@@ -19,6 +35,7 @@
   --blackBackground: #090909;
   --highlightColor: #1341d0;
   --buttonDark: #1a1a1a;
+  --greyBackground: #252525;
 }
 
 a {
@@ -60,12 +77,45 @@ button::after {
   transition: background 0.3s linear;
 }
 
+button:hover::after {  
+  background-color: var(--highlightColor);
+  filter: blur(7px);
+}
 
-button:hover::after {
+.hover-effect::after {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  top: -2.5px;
+  left: -2.5px;
+  z-index: -1;
+  filter: blur(7px);
+  transition: background 0.3s linear;
+}
+
+.hover-effect:hover::after {
   
   background-color: var(--highlightColor);
  
   filter: blur(7px);
+}
+
+.appear-animation {
+  animation-name: appear;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  animation-timeline: view();
+  animation-range: 0% cover 30%;
+}
+
+.fast-appear-animation {
+  animation-name: appear;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  animation-timeline: view();
+  animation-range: 0% cover 20%;
 }
 
 .lines {
@@ -215,12 +265,7 @@ button:hover::after {
   filter: invert(1);
 }
 
-@keyframes scrollLeft {
-  100% {
-    left: calc(var(--squareWidth)*-1);
-  }
-  
-}
+
 
 .technology-square:nth-child(1) {
   animation-delay: calc(var(--scrollDuration) / var(--squareAmount) * (var(--squareAmount) - 1) * -1);
@@ -301,15 +346,14 @@ button:hover::after {
 .profile-card-socials {
   display: flex;
   gap: 16px;
+  cursor: pointer;
 }
 
 .profile-card-socials img {
   width: 32px;
 }
 
-.btn-grad {
-background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)}
-.btn-grad {
+.profile-card-container button {
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -425,15 +469,7 @@ h2::after {
   margin-top: 16px;
 }
 
-@keyframes appear {
-  from {
-    scale: 0.5;
-    opacity: 0;
-  } to {
-    scale: 1;
-    opacity: 1;
-  }
-}
+
 
 /* Projects End */
 
@@ -446,20 +482,25 @@ h2::after {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-.certification {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
+.certification-effect-wrapper{
+  position: relative;
 
-  background-color: #252525;
+  background-color: var(--greyBackground);
   border-radius: 8px;
 
   padding: 10px 20px;
   width: 1fr;
+}
+
+
+.certification {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
 
   font-size: 1rem;
-  /* font-weight: bold; */
-  position: relative;
   text-align: left;
   cursor: pointer;
 
@@ -470,33 +511,136 @@ h2::after {
   animation-range: 0% cover 30%;
 }
 
-.certification::after {
-  --certiicationOffset: 10px;
-  content: '';
-  position: absolute;
-
-  top: calc(var(--certiicationOffset)/-2);
-  left: calc(var(--certiicationOffset)/-2);
-  width: calc(100% + var(--certiicationOffset));
-  height: calc(100% + var(--certiicationOffset));
-
-  border-radius: 8px;
-  
-  transition: background 0.3s linear;
-  z-index: -1;
-  filter: blur(5px)
-}
-
-.certification:hover::after {
-  background: var(--highlightColor);
-  filter: blur(5px);
-}
-
 .certification-title span {
   font-weight: bold;
 }
 .certification-date {
   color: var(--highlightColor);
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
 /* Certifications End */
+
+/* Experience Start */
+.experience {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  row-gap: 40px;
+  column-gap: 15px;
+  position: relative;
+  gap: 15px;
+}
+
+.experience-card {
+  background-color: var(--greyBackground);
+  width: 100%;
+  border-radius: 8px;
+  text-align: left;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.experience-card-content * {
+  margin: 0;
+  display: block;
+}
+
+.experience-card-content {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.experience-card-content .company {
+  font-weight: bold;
+}
+
+.experience-card-content p {
+  grid-column: 1;
+}
+
+.experience-card-content .role {
+  grid-column: 1 / 2;
+}
+
+.experience-card-content .card-date {
+  grid-column: 2;
+  grid-row: 1;
+  color: var(--highlightColor);
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.experience::before { /* Vertical Line*/
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 4px;
+
+  grid-column: 2;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  
+  left: 0;
+}
+
+.experience-card:nth-child(odd)::before,
+.experience-card:nth-child(even)::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  
+  background-color: white;
+  
+  top: 50%;
+  transform: translateY(-50%);
+  
+  z-index: -1;
+  
+  border-radius: 50%;
+}
+
+.experience-card:nth-child(odd)::before {
+  right: -26px;
+}
+
+.experience-card:nth-child(even)::before {
+  left: -26px;
+}
+
+.experience-card:nth-child(odd) {
+  grid-column: 1;
+}
+
+.experience-card:nth-child(even) {
+  grid-column: 3;
+}
+
+.experience-card:nth-child(1) {
+  grid-row: 1;
+}
+
+.experience-card:nth-child(2) {
+  grid-row: 2;
+}
+
+.experience-card:nth-child(3) {
+  grid-row: 3;
+}
+
+.experience-card:nth-child(4) {
+  grid-row: 4;
+}
+
+.experience-card:nth-child(5) {
+  grid-row: 5;
+}
+
+.experience-card:nth-child(6) {
+  grid-row: 6;
+}
+
+/* Experience End */
